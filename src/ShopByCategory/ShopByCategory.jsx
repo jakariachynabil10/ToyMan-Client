@@ -11,7 +11,6 @@ const ShopByCategory = () => {
     fetch("http://localhost:4300/categories")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data[0].Marvels);
         setAvengers(data[0].Avengers);
         setStarWars(data[0].StarWars);
         setMarvels(data[0].Marvels);
