@@ -2,7 +2,6 @@ import { useState } from "react";
 import "./App.css";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { useEffect } from "react";
-import Navbar from "./Navbar/Navbar";
 
 function App() {
 
@@ -45,9 +44,7 @@ function App() {
   // );
 
   return <>
-      <div className="mx-10">
-      <Navbar></Navbar>
-      </div>
+      this is app
   </>
 }
 
