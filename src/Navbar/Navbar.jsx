@@ -54,7 +54,7 @@ const Navbar = () => {
               {items}
             </ul>
           </div>
-         <Link to='/' className="flex items-center gap-1 text-4xl font-bold"> <img src="https://i.ibb.co/yg12D0d/toyman-2.webp" className="w-[50px]" alt="" /> <span className="text-blue-800">Toy</span> <span className="text-pink-600">Man</span></Link>
+         <Link to='/' className="flex items-center gap-1 text-4xl font-bold"> <img src="https://i.ibb.co/yg12D0d/toyman-2.webp" className="w-[50px]" alt="" /> <span className="text-blue-400">Toy</span> <span className="text-pink-400">Man</span></Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu   font-serif menu-horizontal px-1">{items}</ul>

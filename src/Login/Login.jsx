@@ -1,6 +1,30 @@
-import React from "react";
+import React, { useContext } from "react";
 import {Link} from "react-router-dom"
+import { AuthContext } from "../AuthProvider/AuthProvider";
 const Login = () => {
+  const {signIn} = useContext(AuthContext)
+
+
+  const handleLogin = e => {
+    e.preventDefault()
+    const form = e.target
+    const email = form.email.value
+    const password = form.password.value
+    console.log(email, password)
+
+    signIn(email, password)
+    .then(users => {
+      const user = users.user
+      console.log(user)
+    })
+    .catch(error => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorCode, errorMessage)
+    })
+
+  }
+
   return (
     <>
       <div className="hero font-serif min-h-screen bg-base-200">
@@ -14,15 +38,16 @@ const Login = () => {
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <div className="card-body">
-              <form>
+              <form onSubmit={handleLogin}>
                 <div className="form-control">
                   <h1 className="text-3xl font-bold">Login now!</h1>
                   <label className="label">
                     <span className="label-text">Email</span>
                   </label>
                   <input
-                    type="text"
+                    type="email"
                     placeholder="email"
+                    name="email"
                     className="input input-bordered"
                   />
                 </div>
@@ -31,8 +56,9 @@ const Login = () => {
                     <span className="label-text">Password</span>
                   </label>
                   <input
-                    type="text"
+                    type="password"
                     placeholder="password"
+                    name="password"
                     className="input input-bordered"
                   />
                   <label className="label">
@@ -42,7 +68,7 @@ const Login = () => {
                   </label>
                 </div>
                 <div className="form-control mt-6">
-                  <button className="btn btn-accent">Login</button>
+                <input className="btn btn-accent hover:border-rose-400 hover:bg-rose-400 hover:text-white" type="submit" value="Login"/>
                 </div>
               </form>
             </div>
