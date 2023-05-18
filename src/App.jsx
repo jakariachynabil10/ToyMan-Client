@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { useEffect } from "react";
+import Banner from "./Banner/Banner";
 
 function App() {
 
@@ -44,7 +45,7 @@ function App() {
   // );
 
   return <>
-      this is app
+     <Banner></Banner>
   </>
 }
 
