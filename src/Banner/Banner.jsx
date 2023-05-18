@@ -10,7 +10,7 @@ const Banner = () => {
             className="w-full rounded-xl"
           />
          <div className="absolute rounded-xl pt-24 h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
-            <div className="text-white font-serif lg:pl-24 pl-16 w-1/2">
+            <div className="text-white  lg:pl-24 pl-16 w-1/2">
               <h2 className="text-6xl py-4 font-bold">
                Get Awesome toys 
               </h2>
@@ -26,10 +26,10 @@ const Banner = () => {
             </div>
           </div>
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide4" className="btn btn-circle">
+            <a href="#slide4" className="btn btn-success btn-circle">
               ❮
             </a>
-            <a href="#slide2" className="btn btn-circle">
+            <a href="#slide2" className="btn btn-success btn-circle">
               ❯
             </a>
           </div>
@@ -40,7 +40,7 @@ const Banner = () => {
             className="w-full rounded-xl"
           />
            <div className="absolute rounded-xl pt-24 h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
-            <div className="text-white font-serif lg:pl-24 pl-16 w-1/2">
+            <div className="text-white  lg:pl-24 pl-16 w-1/2">
               <h2 className="text-6xl py-4 font-bold">
                Get Awesome toys 
               </h2>
@@ -56,10 +56,10 @@ const Banner = () => {
             </div>
           </div>
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide1" className="btn btn-circle">
+            <a href="#slide1" className="btn btn-success btn-circle">
               ❮
             </a>
-            <a href="#slide3" className="btn btn-circle">
+            <a href="#slide3" className="btn btn-success btn-circle">
               ❯
             </a>
           </div>
@@ -70,7 +70,7 @@ const Banner = () => {
             className="w-full rounded-xl"
           />
           <div className="absolute rounded-xl pt-24 h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
-            <div className="text-white font-serif lg:pl-24 pl-16 w-1/2">
+            <div className="text-white  lg:pl-24 pl-16 w-1/2">
               <h2 className="text-6xl py-4 font-bold">
                Get Awesome toys 
               </h2>
@@ -86,10 +86,10 @@ const Banner = () => {
             </div>
           </div>
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide2" className="btn btn-circle">
+            <a href="#slide2" className="btn btn-success btn-circle">
               ❮
             </a>
-            <a href="#slide4" className="btn btn-circle">
+            <a href="#slide4" className="btn btn-success btn-circle">
               ❯
             </a>
           </div>
@@ -100,7 +100,7 @@ const Banner = () => {
             className="w-full rounded-xl"
           />
            <div className="absolute rounded-xl pt-24 h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
-            <div className="text-white font-serif lg:pl-24 pl-16 w-1/2">
+            <div className="text-white  lg:pl-24 pl-16 w-1/2">
               <h2 className="text-6xl py-4 font-bold">
                Get Awesome toys 
               </h2>
@@ -116,10 +116,10 @@ const Banner = () => {
             </div>
           </div>
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide3" className="btn btn-circle">
+            <a href="#slide3" className="btn btn-success btn-circle">
               ❮
             </a>
-            <a href="#slide1" className="btn btn-circle">
+            <a href="#slide1" className="btn btn-success btn-circle">
               ❯
             </a>
           </div>

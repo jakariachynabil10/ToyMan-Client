@@ -28,7 +28,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="navbar bg-base-100">
+      <div className="navbar  shadow-xl">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -57,12 +57,12 @@ const Navbar = () => {
          <Link to='/' className="flex items-center gap-1 text-4xl font-bold"> <img src="https://i.ibb.co/yg12D0d/toyman-2.webp" className="w-[50px]" alt="" /> <span className="text-blue-400">Toy</span> <span className="text-pink-400">Man</span></Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu   font-serif menu-horizontal px-1">{items}</ul>
+          <ul className="menu    menu-horizontal px-1">{items}</ul>
         </div>
         <div className="navbar-end">
           <Link
             to="/login"
-            className="border px-7 py-2 font-serif border-rose-400 hover:bg-rose-400 text-black hover:text-white font-semibold"
+            className="border px-7 py-2  border-rose-400 hover:bg-rose-400 text-black hover:text-white font-semibold"
           >
             Login
           </Link>
