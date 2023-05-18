@@ -3,6 +3,7 @@ import "./App.css";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { useEffect } from "react";
 import Banner from "./Banner/Banner";
+import ShopByCategory from "./ShopByCategory/ShopByCategory";
 
 function App() {
 
@@ -46,6 +47,7 @@ function App() {
 
   return <>
      <Banner></Banner>
+     <ShopByCategory></ShopByCategory>
   </>
 }
 
