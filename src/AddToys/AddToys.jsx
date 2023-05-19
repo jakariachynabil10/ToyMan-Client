@@ -26,7 +26,7 @@ const AddToys = () => {
       email,
       sub_category: category,
       details,
-      photo,
+      picture : photo,
       price,
     };
     console.log(newToys);

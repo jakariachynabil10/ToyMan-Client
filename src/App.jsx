@@ -6,8 +6,12 @@ import ShopByCategory from "./ShopByCategory/ShopByCategory";
 function App() {
   return (
     <>
-      <Banner></Banner>
+     <div className="lg:pb-5">
+     <Banner></Banner>
+     </div>
+      <div className="lg:px-10">
       <ShopByCategory></ShopByCategory>
+      </div>
     </>
   );
 }

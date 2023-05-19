@@ -6,8 +6,10 @@ import Footer from "../Footer/Footer";
 const Main = () => {
   return (
     <div>
-      <div className="lg:mx-10">
-        <Navbar></Navbar>
+      <div>
+       <div className="bg-gray-200">
+          <Navbar></Navbar>
+       </div>
         <Outlet></Outlet>
         <Footer></Footer>
       </div>

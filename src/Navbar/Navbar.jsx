@@ -28,7 +28,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="navbar  shadow-xl">
+      <div className="navbar lg:px-16 shadow-xl">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -62,7 +62,7 @@ const Navbar = () => {
         <div className="navbar-end">
           <Link
             to="/login"
-            className="border px-7 py-2  border-rose-400 hover:bg-rose-400 text-black hover:text-white font-semibold"
+            className="border px-7 py-2  border-[#5eb4ba] hover:bg-[#5eb4ba] text-black hover:text-black font-semibold"
           >
             Login
           </Link>
