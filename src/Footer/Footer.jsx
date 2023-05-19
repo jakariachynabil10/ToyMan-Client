@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <>
-      <footer className=" p-10  mt-20 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 text-white  font-semibold">
+      <footer className=" p-10  mt-20 bg-gray-200 text-black  font-semibold">
         <div className="footer">
           <div>
             <Link to="/" className="flex items-center gap-1 text-4xl font-bold">
@@ -38,7 +38,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="footer items-center p-4  text-neutral-content">
-          <div className="items-center grid-flow-col">
+          <div className="items-center text-black grid-flow-col">
             <svg
               width="36"
               height="36"

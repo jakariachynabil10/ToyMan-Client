@@ -19,6 +19,7 @@ const Register = () => {
         .then(users => {
             const user = users.user
             console.log(user)
+            form.reset()
             nameAndUrl(name, PhotoUrl)
             .then(()=>{
                 console.log('profile Updated')

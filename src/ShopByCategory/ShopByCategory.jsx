@@ -45,7 +45,7 @@ const ShopByCategory = () => {
                       <div className="card-actions justify-end">
                         <Link>
                           {" "}
-                          <button className="btn btn-primary">
+                          <button className="border px-6 py-2 rounded-xl text-white text-center bg-gradient-to-r from-purple-500 via-pink-500 to-red-500">
                             View Details{" "}
                           </button>
                         </Link>
@@ -74,7 +74,7 @@ const ShopByCategory = () => {
                       <div className="card-actions justify-end">
                         <Link>
                           {" "}
-                          <button className="btn btn-primary">
+                          <button className="border px-6 py-2 rounded-xl text-white text-center bg-gradient-to-r from-purple-500 via-pink-500 to-red-500">
                             View Details{" "}
                           </button>
                         </Link>
@@ -103,7 +103,7 @@ const ShopByCategory = () => {
                       <div className="card-actions justify-end">
                         <Link>
                           {" "}
-                          <button className="btn btn-primary">
+                          <button className="border px-6 py-2 rounded-xl text-white text-center bg-gradient-to-r from-purple-500 via-pink-500 to-red-500">
                             View Details{" "}
                           </button>
                         </Link>
