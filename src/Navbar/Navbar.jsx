@@ -63,6 +63,27 @@ const Navbar = () => {
               className="menu  menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
               {items}
+              <li>
+                {user ? (
+                  <>
+                    <button
+                      className="border px-7 py-2  border-[#5eb4ba] hover:bg-[#5eb4ba] text-black hover:text-black font-semibold"
+                      onClick={handleLogOut}
+                    >
+                      Log out
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <Link
+                      to="/login"
+                      className="border px-7 py-2  border-[#5eb4ba] hover:bg-[#5eb4ba] text-black hover:text-black font-semibold"
+                    >
+                      Login
+                    </Link>
+                  </>
+                )}
+              </li>
             </ul>
           </div>
           <Link to="/" className="flex items-center gap-1 text-4xl font-bold">
@@ -82,11 +103,14 @@ const Navbar = () => {
         <div className="navbar-end">
           {user ? (
             <>
-              <div data-tip={user?.displayName} className="w-10 rounded-full tooltip  tooltip-bottom mr-5">
-                <img   className="rounded-full" src={user?.photoURL} />
+              <div
+                data-tip={user?.displayName}
+                className="w-10 rounded-full tooltip  tooltip-bottom mr-5"
+              >
+                <img className="rounded-full" src={user?.photoURL} />
               </div>
               <button
-                className="border px-7 py-2  border-[#5eb4ba] hover:bg-[#5eb4ba] text-black hover:text-black font-semibold"
+                className="border px-7 py-2 hidden lg:block border-[#5eb4ba] hover:bg-[#5eb4ba] text-black hover:text-black font-semibold"
                 onClick={handleLogOut}
               >
                 Log out
@@ -96,7 +120,7 @@ const Navbar = () => {
             <>
               <Link
                 to="/login"
-                className="border px-7 py-2  border-[#5eb4ba] hover:bg-[#5eb4ba] text-black hover:text-black font-semibold"
+                className="border px-7 py-2 hidden lg:block border-[#5eb4ba] hover:bg-[#5eb4ba] text-black hover:text-black font-semibold"
               >
                 Login
               </Link>

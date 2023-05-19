@@ -26,7 +26,6 @@ const ShopByCategory = () => {
       </h1>
       <Tabs>
         <TabList className="flex justify-center mb-8">
-          {/* <Tab onClick={() => setCategory("Marvel Toys")}>Marvels</Tab> */}
           <Tab
             className={`px-6 py-3 mr-4 rounded-full text-lg font-bold transition-colors duration-300 ${
               category === "Marvel Toys"
@@ -37,7 +36,6 @@ const ShopByCategory = () => {
           >
             Marvels
           </Tab>
-          {/* <Tab onClick={() => setCategory("Avengers Toys")}>Avengers</Tab> */}
           <Tab
             className={`px-6 py-3 mr-4 rounded-full text-lg font-bold transition-colors duration-300 ${
               category === "Avengers Toys"
@@ -61,7 +59,7 @@ const ShopByCategory = () => {
         </TabList>
 
         <TabPanel>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mx-16 lg:mx-4 mt-10 ">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mx-16 lg:mx-4 mt-10 ">
             {toys.map((toy) => {
               const { name, picture, rating, price } = toy;
               return (
@@ -96,7 +94,7 @@ const ShopByCategory = () => {
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mx-16 lg:mx-4 mt-10 ">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mx-16 lg:mx-4 mt-10 ">
             {toys.map((toy) => {
               const { _id, name, picture, rating, price } = toy;
               return (
@@ -131,7 +129,7 @@ const ShopByCategory = () => {
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mx-16 lg:mx-4 mt-10 ">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mx-16 lg:mx-4 mt-10 ">
             {toys.map((toy) => {
               const { name, picture, rating, price } = toy;
               return (
