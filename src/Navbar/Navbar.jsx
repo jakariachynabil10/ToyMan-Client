@@ -1,25 +1,36 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Navbar = () => {
+  const { logOut, user } = useContext(AuthContext);
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.log(error));
+  };
+
   const items = (
     <>
       <li className="hover:text-blue-700 font-bold">
         <Link to="/">Home</Link>
       </li>
-
       <li className="hover:text-blue-700 font-bold">
         <Link to="/allToys">All toys</Link>
       </li>
-
-      <li className="hover:text-blue-700 font-bold">
-        <Link to="/myToys">My toys</Link>
-      </li>
+      {user?.email ? (
+        <>
+          <li className="hover:text-blue-700 font-bold">
+            <Link to="/myToys">My Toys</Link>
+          </li>
+        </>
+      ) : (
+        ""
+      )}
 
       <li className="hover:text-blue-700 font-bold">
         <Link to="/addToys">Add toys</Link>
       </li>
-
       <li className="hover:text-blue-700 font-bold">
         <Link to="/blog">Blog</Link>
       </li>
@@ -54,18 +65,43 @@ const Navbar = () => {
               {items}
             </ul>
           </div>
-         <Link to='/' className="flex items-center gap-1 text-4xl font-bold"> <img src="https://i.ibb.co/yg12D0d/toyman-2.webp" className="w-[50px]" alt="" /> <span className="text-blue-400">Toy</span> <span className="text-pink-400">Man</span></Link>
+          <Link to="/" className="flex items-center gap-1 text-4xl font-bold">
+            {" "}
+            <img
+              src="https://i.ibb.co/yg12D0d/toyman-2.webp"
+              className="w-[50px]"
+              alt=""
+            />{" "}
+            <span className="text-blue-400">Toy</span>{" "}
+            <span className="text-pink-400">Man</span>
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu    menu-horizontal px-1">{items}</ul>
         </div>
         <div className="navbar-end">
-          <Link
-            to="/login"
-            className="border px-7 py-2  border-[#5eb4ba] hover:bg-[#5eb4ba] text-black hover:text-black font-semibold"
-          >
-            Login
-          </Link>
+          {user ? (
+            <>
+              <div className="w-10 rounded-full mr-5">
+                <img className="rounded-full" src={user?.photoURL} />
+              </div>
+              <button
+                className="border px-7 py-2  border-[#5eb4ba] hover:bg-[#5eb4ba] text-black hover:text-black font-semibold"
+                onClick={handleLogOut}
+              >
+                Log out
+              </button>
+            </>
+          ) : (
+            <>
+              <Link
+                to="/login"
+                className="border px-7 py-2  border-[#5eb4ba] hover:bg-[#5eb4ba] text-black hover:text-black font-semibold"
+              >
+                Login
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </>
