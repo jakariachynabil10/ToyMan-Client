@@ -1,0 +1,37 @@
+import React, { useEffect, useState } from "react";
+
+const Gallery = () => {
+  const [toys, setToys] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:4300/toys")
+      .then((res) => res.json())
+      .then((data) => setToys(data));
+  }, []);
+
+  return (
+    <>
+    <h1 className="text-center my-6 text-5xl font-bold">Gallery</h1>
+      <div className="gallery-container bg-gray-100 py-8">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {toys.map((toy) => {
+              const { picture } = toy;
+              return (
+                <>
+                  <div
+                    key={toy._id}
+                    className="relative overflow-hidden rounded"
+                  >
+                    <img src={picture} className="w-full h-[200px]" />
+                  </div>
+                </>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Gallery;

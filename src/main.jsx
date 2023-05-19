@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "react-tabs/style/react-tabs.css";
+import '@smastrom/react-rating/style.css'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import Main from "./Main/Main.jsx";
@@ -12,6 +13,7 @@ import BLog from "./Blog/BLog.jsx";
 import Login from "./Login/Login.jsx";
 import Register from "./Register/Register.jsx";
 import AuthProvider from "./AuthProvider/AuthProvider.jsx";
+import PrivetRoute from "./PrivetRoute/PrivetRoute.jsx";
 
 const router = createBrowserRouter([
   {
@@ -33,7 +35,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/addToys",
-        element: <AddToys></AddToys>,
+        element: <PrivetRoute><AddToys></AddToys></PrivetRoute>,
       },
       {
         path: "/",

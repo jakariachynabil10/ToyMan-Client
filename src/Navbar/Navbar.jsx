@@ -82,8 +82,8 @@ const Navbar = () => {
         <div className="navbar-end">
           {user ? (
             <>
-              <div className="w-10 rounded-full mr-5">
-                <img className="rounded-full" src={user?.photoURL} />
+              <div data-tip={user?.displayName} className="w-10 rounded-full tooltip  tooltip-bottom mr-5">
+                <img   className="rounded-full" src={user?.photoURL} />
               </div>
               <button
                 className="border px-7 py-2  border-[#5eb4ba] hover:bg-[#5eb4ba] text-black hover:text-black font-semibold"

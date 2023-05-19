@@ -1,6 +1,7 @@
 import "./App.css";
 
 import Banner from "./Banner/Banner";
+import Gallery from "./Gallery/Gallery";
 import ShopByCategory from "./ShopByCategory/ShopByCategory";
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
      <Banner></Banner>
      </div>
       <div className="lg:px-10">
+        <Gallery></Gallery>
       <ShopByCategory></ShopByCategory>
       </div>
     </>
