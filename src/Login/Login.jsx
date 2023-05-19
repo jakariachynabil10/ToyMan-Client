@@ -1,35 +1,51 @@
 import React, { useContext } from "react";
-import {Link, useLocation, useNavigate} from "react-router-dom"
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import { FaGoogle } from "react-icons/fa";
 const Login = () => {
-  const {signIn} = useContext(AuthContext)
-  const location = useLocation()
-  const navigate = useNavigate()
+  const { signIn, googleSignIn } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
 
-  const from = location.state?.from?.pathname || '/'
+  const from = location.state?.from?.pathname || "/";
 
-
-  const handleLogin = e => {
-    e.preventDefault()
-    const form = e.target
-    const email = form.email.value
-    const password = form.password.value
-    console.log(email, password)
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
 
     signIn(email, password)
-    .then(users => {
-      const user = users.user
-      console.log(user)
-      form.reset()
-      navigate(from , {replace : true})
-    })
-    .catch(error => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log(errorCode, errorMessage)
-    })
+      .then((users) => {
+        const user = users.user;
+        console.log(user);
+        form.reset();
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode, errorMessage);
+      });
+  };
 
-  }
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        // const email = error.customData.email;
+        console.log(errorCode, errorMessage);
+      });
+  };
 
   return (
     <>
@@ -68,15 +84,31 @@ const Login = () => {
                     className="input input-bordered"
                   />
                   <label className="label">
-                    <Link to='/register' className="label-text-alt link link-hover">
-                   Create Your Account
+                    <Link
+                      to="/register"
+                      className="label-text-alt link link-hover"
+                    >
+                      Create Your Account
                     </Link>
                   </label>
                 </div>
                 <div className="form-control mt-6">
-                <input className="btn btn-accent hover:border-rose-400 hover:bg-rose-400 hover:text-white" type="submit" value="Login"/>
+                  <input
+                    className="btn btn-accent hover:border-rose-400 hover:bg-rose-400 hover:text-white"
+                    type="submit"
+                    value="Login"
+                  />
                 </div>
               </form>
+              <hr />
+
+              <button
+                onClick={()=> handleGoogleSignIn()}
+                className="flex items-center justify-center bg-[#0a031c] text-white mt-4 gap-2 border px-6 py-2 rounded-xl bg"
+              >
+                {" "}
+                <FaGoogle></FaGoogle> Google
+              </button>
             </div>
           </div>
         </div>
