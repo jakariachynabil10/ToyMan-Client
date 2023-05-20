@@ -25,7 +25,7 @@ const AllToys = () => {
           </thead>
           <tbody>
             {toysLoader.map((toy, index) => (
-              <SingleToysCard key={toy._id} index={index} toy={toy}></SingleToysCard>
+              <SingleToysCard key={toy._id}  index={index} toy={toy}></SingleToysCard>
             ))}
           </tbody>
         </table>

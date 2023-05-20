@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const SingleToysCard = ({ toy, index }) => {
+const SingleToysCard = ({ toy, index , toysLoader}) => {
   const {
     available_quantity,
     name,

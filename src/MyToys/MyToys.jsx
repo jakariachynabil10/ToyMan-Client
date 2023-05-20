@@ -1,22 +1,48 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import SingleMyToy from "./SingleMyToy";
+import Swal from "sweetalert2";
 
 const MyToys = () => {
-    const {user} = useContext(AuthContext)
-    const [userToy, setUserToy] = useState([])
+  const { user } = useContext(AuthContext);
+  const [userToy, setUserToy] = useState([]);
 
-    const url = `http://localhost:4300/addToy?email=${user?.email}`;
-   useEffect( ()=>{
+  const url = `http://localhost:4300/addToy?email=${user?.email}`;
+  useEffect(() => {
     fetch(url)
-    .then(res=> res.json())
-    .then(data => {
-        console.log(data)
-        setUserToy(data)
-    })
-   } ,[url])
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setUserToy(data);
+      });
+  }, [url]);
 
-  //  const handleUpdate
+  const handleDelete = (_id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:4300/toys/${_id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.deletedCount > 0) {
+              Swal.fire("Deleted!", "Your Toys has been deleted.", "success");
+              const remaining = userToy.filter((UT) => UT._id !== _id);
+              setUserToy(remaining);
+            }
+          });
+      }
+    });
+  };
   return (
     <>
       <div className="overflow-x-auto ">
@@ -35,9 +61,14 @@ const MyToys = () => {
             </tr>
           </thead>
           <tbody>
-           {
-            userToy.map((toy, index) => <SingleMyToy index={index} key={toy._id} toy={toy}></SingleMyToy>)
-           }
+            {userToy.map((toy, index) => (
+              <SingleMyToy
+                handleDelete={handleDelete}
+                index={index}
+                key={toy._id}
+                toy={toy}
+              ></SingleMyToy>
+            ))}
           </tbody>
         </table>
       </div>
