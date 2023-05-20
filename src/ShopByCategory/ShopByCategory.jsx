@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Rating } from "@smastrom/react-rating";
 
-import "./ShopByCategory.css";
+
 
 const ShopByCategory = () => {
   const [toys, setToys] = useState([]);

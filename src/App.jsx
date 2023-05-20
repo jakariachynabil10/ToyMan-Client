@@ -1,6 +1,7 @@
 import "./App.css";
 
 import Banner from "./Banner/Banner";
+import Collection from "./Collection/Collection";
 import ExtraCard from "./ExtraCard/ExtraCard";
 import Gallery from "./Gallery/Gallery";
 import ShopByCategory from "./ShopByCategory/ShopByCategory";
@@ -15,6 +16,7 @@ function App() {
         <Gallery></Gallery>
       <ShopByCategory></ShopByCategory>
       <ExtraCard></ExtraCard>
+      <Collection></Collection>
       </div>
     </>
   );

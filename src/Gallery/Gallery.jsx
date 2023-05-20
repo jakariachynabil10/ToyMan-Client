@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 
+
 const Gallery = () => {
   const [toys, setToys] = useState([]);
   useEffect(() => {
@@ -8,12 +9,12 @@ const Gallery = () => {
       .then((data) => setToys(data));
   }, []);
 
+ 
+
   return (
     <>
     <h1 className="text-center my-6 text-5xl font-bold">Gallery</h1>
-      <div className="gallery-container bg-gray-100 py-8">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 bg-gray-100 py-8 mx-auto px-4 lg:grid-cols-4 gap-4">
             {toys.map((toy) => {
               const { picture } = toy;
               return (
@@ -28,8 +29,6 @@ const Gallery = () => {
               );
             })}
           </div>
-        </div>
-      </div>
     </>
   );
 };

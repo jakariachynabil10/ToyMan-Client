@@ -2,11 +2,28 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const SingleToysCard = ({ toy, index }) => {
-  const { available_quantity, name, price, seller, sub_category, _id } = toy;
+  const {
+    available_quantity,
+    name,
+    price,
+    seller,
+    sub_category,
+    _id,
+    picture,
+  } = toy;
   return (
     <>
-      <tr>
+      <tr>       
         <th>{index + 1}</th>
+        <td>
+        <div className="w-10 rounded-full">
+          <img
+            src={picture}
+            className="rounded-full"
+            // alt="Avatar Tailwind CSS Component"
+          />
+        </div>
+        </td>
         <td>{seller}</td>
         <td>{name}</td>
         <td>{sub_category}</td>
