@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { BsFillPencilFill } from "react-icons/bs";
+import { FaRegTimesCircle } from "react-icons/fa";
 
 const SingleMyToy = ({ toy, index }) => {
   const { available_quantity, name, price, seller, sub_category, _id } = toy;
@@ -12,12 +14,17 @@ const SingleMyToy = ({ toy, index }) => {
         <td>{sub_category}</td>
         <td>${price}</td>
         <td>{available_quantity}</td>
-        <td className="border  px-4 w-[30px]  py-1 rounded-xl text-black text-center bg-[#5eb4ba]">
-          <Link> Update</Link>
-        </td>
-        <td className="border  px-4 w-[30px] py-1 rounded-xl text-black text-center bg-[#5eb4ba]">
-          <Link> Delete </Link>
-        </td>
+        <td className="flex gap-4 items-center">
+              <Link to={`/updateToys/${_id}`}>
+                {" "}
+                <button>
+                  <BsFillPencilFill></BsFillPencilFill>
+                </button>
+              </Link>{" "}
+              <button >
+                <FaRegTimesCircle></FaRegTimesCircle>
+              </button>
+            </td>
       </tr>
     </>
   );

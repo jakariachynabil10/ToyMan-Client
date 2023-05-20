@@ -15,6 +15,7 @@ import Register from "./Register/Register.jsx";
 import AuthProvider from "./AuthProvider/AuthProvider.jsx";
 import PrivetRoute from "./PrivetRoute/PrivetRoute.jsx";
 import SingelDetails from "./AllToys/SingelDetails.jsx";
+import UpdateToy from "./UpdateToy/UpdateToy.jsx";
 
 const router = createBrowserRouter([
   {
@@ -37,7 +38,12 @@ const router = createBrowserRouter([
       },
       {
         path: "/myToys",
-        element: <MyToys></MyToys>,
+        element: <PrivetRoute><MyToys></MyToys></PrivetRoute>,
+      },
+      {
+        path : '/updateToys/:id',
+        element : <UpdateToy></UpdateToy>,
+        loader : ({params}) => fetch(`http://localhost:4300/toys/${params.id}`)
       },
       {
         path: "/addToys",
