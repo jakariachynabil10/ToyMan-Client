@@ -36,7 +36,7 @@ const ExtraCard = () => {
             </p>
             <Link
               to="/addToys"
-              className="border transition-transform duration-300 transform hover:scale-110 border-none left-12 absolute px-5 py-2 bg-blue-500 hover:bg-pink-500 rounded-3xl text-white text-center mt-3"
+              className="border transition-transform duration-300 transform hover:scale-110 border-none left-12 absolute px-5 py-2 bg-pink-500 hover:bg-blue-500 rounded-3xl text-white text-center mt-3"
             >
               See Now
             </Link>
