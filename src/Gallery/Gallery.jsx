@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
 
 const Gallery = () => {
   const [toys, setToys] = useState([]);
@@ -20,6 +23,8 @@ const Gallery = () => {
               return (
                 <>
                   <div
+                   data-aos="fade-up"
+                   data-aos-duration="1000"
                     key={toy._id}
                     className="relative overflow-hidden rounded"
                   >

@@ -4,7 +4,10 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Rating } from "@smastrom/react-rating";
 
-
+import AOS from "aos";
+import "aos/dist/aos.css"; // You can also use <link> for styles
+// ..
+AOS.init();
 
 const ShopByCategory = () => {
   const [toys, setToys] = useState([]);
@@ -59,9 +62,13 @@ const ShopByCategory = () => {
         </TabList>
 
         <TabPanel>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mx-16 lg:mx-4 mt-10 ">
+          <div
+            data-aos="fade-right"
+            data-aos-duration="3000"
+            className="grid grid-cols-1 lg:grid-cols-3 gap-8 mx-16 lg:mx-4 mt-10 "
+          >
             {toys.map((toy) => {
-              const { name, picture, rating, price } = toy;
+              const {_id, name, picture, rating, price } = toy;
               return (
                 <>
                   <div className="card card-compact w-[90%] transition-transform duration-300 transform-gpu hover:scale-110 shadow-xl">
@@ -79,7 +86,7 @@ const ShopByCategory = () => {
                         />
                       </p>
                       <div className="card-actions justify-end">
-                        <Link>
+                        <Link to={`/toy/${_id}`}>
                           {" "}
                           <button className="border px-6 py-2 rounded-xl  text-center border-[#5eb4ba] hover:bg-[#5eb4ba] text-black transition-all duration-500 relative overflow-hidden ">
                             View Details
@@ -94,7 +101,11 @@ const ShopByCategory = () => {
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mx-16 lg:mx-4 mt-10 ">
+          <div
+            data-aos="fade-up"
+            data-aos-duration="3000"
+            className="grid grid-cols-1  lg:grid-cols-3  gap-8 mx-16 lg:mx-4 mt-10 "
+          >
             {toys.map((toy) => {
               const { _id, name, picture, rating, price } = toy;
               return (
@@ -114,7 +125,7 @@ const ShopByCategory = () => {
                         />
                       </p>
                       <div className="card-actions justify-end">
-                        <Link>
+                        <Link to={`/toy/${_id}`}>
                           {" "}
                           <button className="border px-6 py-2 rounded-xl  text-center border-[#5eb4ba] hover:bg-[#5eb4ba] text-black transition-all duration-500 relative overflow-hidden ">
                             View Details
@@ -129,9 +140,13 @@ const ShopByCategory = () => {
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mx-16 lg:mx-4 mt-10 ">
+          <div
+            data-aos="fade-left"
+            data-aos-duration="3000"
+            className="grid grid-cols-1 lg:grid-cols-3 gap-8 mx-16 lg:mx-4 mt-10 "
+          >
             {toys.map((toy) => {
-              const { name, picture, rating, price } = toy;
+              const { _id, name, picture, rating, price } = toy;
               return (
                 <>
                   <div className="card card-compact w-[90%] transition-transform duration-300 transform-gpu hover:scale-110 shadow-xl">
@@ -149,7 +164,7 @@ const ShopByCategory = () => {
                         />
                       </p>
                       <div className="card-actions justify-end">
-                        <Link>
+                        <Link to={`/toy/${_id}`}>
                           {" "}
                           <button className="border px-6 py-2 rounded-xl  text-center border-[#5eb4ba] hover:bg-[#5eb4ba] text-black transition-all duration-500 relative overflow-hidden ">
                             View Details

@@ -9,7 +9,7 @@ const ExtraCard = () => {
           <img
             src="https://cdn.shopify.com/s/files/1/1152/4590/files/home4-banner-02_389f97e8-9d15-431a-abf3-8f72e0508721.png?v=1676032554"
             alt=""
-            className="h-full"
+            className="h-full w-full"
           />
           <div className="absolute top-20 right-1 lg:top-36 lg:right-8 text-white transform -translate-y-1/2">
             <p className="font-bold lg:text-4xl text-3xl text-center">
@@ -23,7 +23,7 @@ const ExtraCard = () => {
             </Link>
           </div>
         </div>
-        <div className="relative mt-8  border w-full lg:h-[290px]">
+        <div className="relative mt-8 lg:mt-0  border w-full lg:h-[290px]">
           <img
             src="https://cdn.shopify.com/s/files/1/1152/4590/files/Untitled-2.png?v=1676033186"
             alt=""

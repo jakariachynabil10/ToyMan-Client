@@ -20,6 +20,7 @@ const AllToys = () => {
               <th>Price</th>
               <th>Quantity</th>
               <th></th>
+              <th></th>
             </tr>
           </thead>
           <tbody>

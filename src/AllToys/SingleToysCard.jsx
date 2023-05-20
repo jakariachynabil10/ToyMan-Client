@@ -29,8 +29,8 @@ const SingleToysCard = ({ toy, index }) => {
         <td>{sub_category}</td>
         <td>${price}</td>
         <td>{available_quantity}</td>
-        <td className="border  px-4 w-[30px] py-1 rounded-xl text-black text-center bg-[#5eb4ba]">
-          <Link> View Details</Link>
+        <td className="border  px-4 w-[30px]  py-1 rounded-xl text-black text-center bg-[#5eb4ba]">
+          <Link to={`/toy/${_id}`}> View Details</Link>
         </td>
       </tr>
     </>
