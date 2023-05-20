@@ -47,7 +47,7 @@ const UpdateToy = () => {
             details
         }
 
-        const url = `http://localhost:4300/toys/${_id}`
+        const url = `https://assaigment11-server.vercel.app/toys/${_id}`
         fetch(url, {
             method: 'PUT',
             headers: {

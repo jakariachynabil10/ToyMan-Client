@@ -13,7 +13,7 @@ const ShopByCategory = () => {
   const [toys, setToys] = useState([]);
   const [category, setCategory] = useState("Marvel Toys");
 
-  const url = `http://localhost:4300/toys?sub_category=${category}`;
+  const url = `https://assaigment11-server.vercel.app/toys?sub_category=${category}`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())

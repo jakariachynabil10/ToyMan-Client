@@ -7,7 +7,7 @@ AOS.init();
 const Gallery = () => {
   const [toys, setToys] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:4300/toys")
+    fetch("https://assaigment11-server.vercel.app/toys")
       .then((res) => res.json())
       .then((data) => setToys(data));
   }, []);

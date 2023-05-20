@@ -29,12 +29,12 @@ const router = createBrowserRouter([
       {
         path: "/allToys",
         element: <AllToys></AllToys>,
-        loader: () => fetch("http://localhost:4300/toys"),
+        loader: () => fetch("https://assaigment11-server.vercel.app/toys"),
       },
       {
         path : '/toy/:id',
         element : <PrivetRoute><SingelDetails></SingelDetails></PrivetRoute>,
-        loader : ({params}) => fetch(`http://localhost:4300/toys/${params.id}`)
+        loader : ({params}) => fetch(`https://assaigment11-server.vercel.app/toys/${params.id}`)
       },
       {
         path: "/myToys",
@@ -43,7 +43,7 @@ const router = createBrowserRouter([
       {
         path : '/updateToys/:id',
         element : <UpdateToy></UpdateToy>,
-        loader : ({params}) => fetch(`http://localhost:4300/toys/${params.id}`)
+        loader : ({params}) => fetch(`https://assaigment11-server.vercel.app/toys/${params.id}`)
       },
       {
         path: "/addToys",

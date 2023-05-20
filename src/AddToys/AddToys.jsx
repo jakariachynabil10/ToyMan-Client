@@ -28,10 +28,11 @@ const AddToys = () => {
       details,
       picture : photo,
       price,
+      rating
     };
     console.log(newToys);
 
-    const url = "http://localhost:4300/addToy";
+    const url = "https://assaigment11-server.vercel.app/addToy";
     fetch(url, {
       method: "POST",
       headers: {
@@ -204,7 +205,7 @@ const AddToys = () => {
             <input
               type="submit"
               value="Add Toy"
-              className="border w-full p-5 rounded-xl text-white text-center bg-slate-600 cursor-pointer"
+              className="border hover:bg-violet-600 duration-300  w-full p-5 rounded-xl text-white text-center bg-slate-600 cursor-pointer"
             />
           </form>
         </div>
