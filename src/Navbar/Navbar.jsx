@@ -23,14 +23,13 @@ const Navbar = () => {
           <li className="hover:text-blue-700 font-bold">
             <Link to="/myToys">My Toys</Link>
           </li>
+          <li className="hover:text-blue-700 font-bold">
+            <Link to="/addToys">Add toys</Link>
+          </li>
         </>
       ) : (
         ""
       )}
-
-      <li className="hover:text-blue-700 font-bold">
-        <Link to="/addToys">Add toys</Link>
-      </li>
       <li className="hover:text-blue-700 font-bold">
         <Link to="/blog">Blog</Link>
       </li>

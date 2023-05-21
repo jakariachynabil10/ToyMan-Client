@@ -16,11 +16,13 @@ import AuthProvider from "./AuthProvider/AuthProvider.jsx";
 import PrivetRoute from "./PrivetRoute/PrivetRoute.jsx";
 import SingelDetails from "./AllToys/SingelDetails.jsx";
 import UpdateToy from "./UpdateToy/UpdateToy.jsx";
+import Error from "./Error/Error.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement : <Error></Error>,
     children: [
       {
         path: "/",
@@ -29,7 +31,7 @@ const router = createBrowserRouter([
       {
         path: "/allToys",
         element: <AllToys></AllToys>,
-        loader: () => fetch("https://assaigment11-server.vercel.app/toys"),
+       
       },
       {
         path : '/toy/:id',
