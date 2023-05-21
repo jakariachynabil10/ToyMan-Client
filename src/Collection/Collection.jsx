@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 const Collection = () => {
   return (
     <>
-      <div className="relative border w-full mt-16">
+      <div data-aos="fade-up"
+            data-aos-duration="2000" className="relative border w-full mt-16">
         <img
           src="https://wpbingosite.com/wordpress/kidsdoy/wp-content/plugins/wpbingo/lib/lookbook/images/bwp_lookbook/lookbook-1.jpg"
           alt=""

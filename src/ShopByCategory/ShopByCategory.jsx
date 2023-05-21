@@ -1,15 +1,18 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { Rating } from "@smastrom/react-rating";
 
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
+import { AuthContext } from "../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 // ..
 AOS.init();
 
 const ShopByCategory = () => {
+  const { user } = useContext(AuthContext);
   const [toys, setToys] = useState([]);
   const [category, setCategory] = useState("Marvel Toys");
 
@@ -21,6 +24,13 @@ const ShopByCategory = () => {
         setToys(data);
       });
   }, [category]);
+
+  const validation = () => {
+    if (!user) {
+      Swal.fire("You Have To Login first");
+      <Navigate to='/login'></Navigate>
+    }
+  };
 
   return (
     <>
@@ -68,7 +78,7 @@ const ShopByCategory = () => {
             className="grid grid-cols-1 lg:grid-cols-3 gap-8 mx-16 lg:mx-4 mt-10 "
           >
             {toys.map((toy) => {
-              const {_id, name, picture, rating, price } = toy;
+              const { _id, name, picture, rating, price } = toy;
               return (
                 <>
                   <div className="card card-compact w-[90%] transition-transform duration-300 transform-gpu hover:scale-110 shadow-xl">
@@ -88,7 +98,7 @@ const ShopByCategory = () => {
                       <div className="card-actions justify-end">
                         <Link to={`/toy/${_id}`}>
                           {" "}
-                          <button className="border px-6 py-2 rounded-xl  text-center border-[#5eb4ba] hover:bg-[#5eb4ba] text-black transition-all duration-500 relative overflow-hidden ">
+                          <button onClick={()=> validation()} className="border px-6 py-2 rounded-xl  text-center border-[#5eb4ba] hover:bg-[#5eb4ba] text-black transition-all duration-500 relative overflow-hidden ">
                             View Details
                           </button>
                         </Link>
@@ -127,7 +137,7 @@ const ShopByCategory = () => {
                       <div className="card-actions justify-end">
                         <Link to={`/toy/${_id}`}>
                           {" "}
-                          <button className="border px-6 py-2 rounded-xl  text-center border-[#5eb4ba] hover:bg-[#5eb4ba] text-black transition-all duration-500 relative overflow-hidden ">
+                          <button onClick={()=> validation()} className="border px-6 py-2 rounded-xl  text-center border-[#5eb4ba] hover:bg-[#5eb4ba] text-black transition-all duration-500 relative overflow-hidden ">
                             View Details
                           </button>
                         </Link>
@@ -166,7 +176,7 @@ const ShopByCategory = () => {
                       <div className="card-actions justify-end">
                         <Link to={`/toy/${_id}`}>
                           {" "}
-                          <button className="border px-6 py-2 rounded-xl  text-center border-[#5eb4ba] hover:bg-[#5eb4ba] text-black transition-all duration-500 relative overflow-hidden ">
+                          <button onClick={()=> validation()} className="border px-6 py-2 rounded-xl  text-center border-[#5eb4ba] hover:bg-[#5eb4ba] text-black transition-all duration-500 relative overflow-hidden ">
                             View Details
                           </button>
                         </Link>
