@@ -5,7 +5,7 @@ const ExtraCard = () => {
   return (
     <>
       <div   className="lg:flex mb-3 items-center gap-5 mt-16">
-        <div data-aos="fade-right"
+        <div data-aos="fade-up"
             data-aos-duration="2000" className="relative  border w-full lg:h-[290px]">
           <img
             src="https://cdn.shopify.com/s/files/1/1152/4590/files/home4-banner-02_389f97e8-9d15-431a-abf3-8f72e0508721.png?v=1676032554"
@@ -24,7 +24,7 @@ const ExtraCard = () => {
             </Link>
           </div>
         </div>
-        <div data-aos="fade-left"
+        <div data-aos="fade-up"
             data-aos-duration="2000" className="relative mt-8 lg:mt-0  border w-full lg:h-[290px]">
           <img
             src="https://cdn.shopify.com/s/files/1/1152/4590/files/Untitled-2.png?v=1676033186"

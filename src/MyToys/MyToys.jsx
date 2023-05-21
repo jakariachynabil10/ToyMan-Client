@@ -6,8 +6,11 @@ import Swal from "sweetalert2";
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [userToy, setUserToy] = useState([]);
+  const [asc, setAsc] = useState(true);
 
-  const url = `https://assaigment11-server.vercel.app/addToy?email=${user?.email}`;
+  const url = `https://assaigment11-server.vercel.app/addToy?email=${
+    user?.email
+  }&sort=${asc ? "asc" : "dec"}`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
@@ -15,7 +18,7 @@ const MyToys = () => {
         console.log(data);
         setUserToy(data);
       });
-  }, [url]);
+  }, [url, asc]);
 
   const handleDelete = (_id) => {
     Swal.fire({
@@ -43,8 +46,21 @@ const MyToys = () => {
       }
     });
   };
+
   return (
     <>
+      <div className="dropdown">
+        <label tabIndex={0} className="btn m-1">
+          Price Sort
+        </label>
+        <ul
+          tabIndex={0}
+          className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
+        >
+          <button onClick={()=> setAsc(true)}>Low To High</button>
+          <button onClick={()=> setAsc(false)}>Hight To low</button>
+        </ul>
+      </div>
       <div className="overflow-x-auto ">
         <table className="table w-full">
           {/* head */}
