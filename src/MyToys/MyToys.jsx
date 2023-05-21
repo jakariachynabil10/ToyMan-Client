@@ -57,8 +57,8 @@ const MyToys = () => {
           tabIndex={0}
           className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
         >
-          <button onClick={()=> setAsc(true)}>Low To High</button>
-          <button onClick={()=> setAsc(false)}>Hight To low</button>
+          <li><button onClick={()=> setAsc(true)}>Low To High</button></li>
+          <li><button onClick={()=> setAsc(false)}>Hight To low</button></li>
         </ul>
       </div>
       <div className="overflow-x-auto ">
