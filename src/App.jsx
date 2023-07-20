@@ -7,6 +7,7 @@ import ExtraCard from "./ExtraCard/ExtraCard";
 import Gallery from "./Gallery/Gallery";
 import HowItWorks from "./HowItWorks/HowItWorks";
 import ShopByCategory from "./ShopByCategory/ShopByCategory";
+import TopBrands from "./TopBrands/TopBrands";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Collection></Collection>
         <HowItWorks></HowItWorks>
         <EasierToInvest></EasierToInvest>
+        <TopBrands></TopBrands>
       </div>
     </>
   );
