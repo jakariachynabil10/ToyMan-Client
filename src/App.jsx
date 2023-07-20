@@ -2,6 +2,7 @@ import "./App.css";
 
 import Banner from "./Banner/Banner";
 import Collection from "./Collection/Collection";
+import Discount from "./Discount/Discount";
 import EasierToInvest from "./EasierToInvest/EasierToInvest";
 import ExtraCard from "./ExtraCard/ExtraCard";
 import Gallery from "./Gallery/Gallery";
@@ -23,6 +24,7 @@ function App() {
         <HowItWorks></HowItWorks>
         <EasierToInvest></EasierToInvest>
         <TopBrands></TopBrands>
+        <Discount></Discount>
       </div>
     </>
   );
